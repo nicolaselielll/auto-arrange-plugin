@@ -2,11 +2,6 @@
   "name": "rete-auto-arrange-plugin",
   "version": "2.0.2",
   "description": "",
-  "scripts": {
-    "build": "rete build -c rete.config.ts",
-    "lint": "rete lint",
-    "doc": "rete doc"
-  },
   "author": "Vitaliy Stoliarov",
   "license": "MIT",
   "keywords": [
@@ -22,13 +17,6 @@
   "bugs": {
     "url": "https://github.com/retejs/auto-arrange-plugin/issues"
   },
-  "devDependencies": {
-    "elkjs": "^0.8.2",
-    "globals": "^15.9.0",
-    "rete": "^2.0.1",
-    "rete-area-plugin": "^2.0.0",
-    "rete-cli": "~2.0.1"
-  },
   "peerDependencies": {
     "elkjs": "^0.8.2",
     "rete": "^2.0.1",
@@ -37,5 +25,11 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.21.0"
-  }
+  },
+  "module": "rete-auto-arrange-plugin.esm.js",
+  "main": "rete-auto-arrange-plugin.common.js",
+  "jsdelivr": "rete-auto-arrange-plugin.min.js",
+  "unpkg": "rete-auto-arrange-plugin.min.js",
+  "types": "_types/index.d.ts",
+  "typings": "_types/index.d.ts"
 }
