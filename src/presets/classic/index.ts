@@ -9,7 +9,10 @@ export const setup = (props?: { spacing?: number, top?: number, bottom?: number,
         bottom: typeof props?.bottom !== 'undefined' ? props.bottom : 15,
         x: typeof props?.x !== 'undefined' ? props.x : 0 // Default value for x
       };
-
+      console.log("Calculated port data:", {
+        x: data.side === 'output' ? x : -x,
+        y: data.side === 'output' ? top + data.index * spacing : data.height - bottom - data.ports * spacing + data.index * spacing
+      });
       if (data.side === 'output') {
         return {
           x: x, // Use the destructured x directly

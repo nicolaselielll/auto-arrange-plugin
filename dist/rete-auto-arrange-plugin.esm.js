@@ -251,7 +251,7 @@ function ownKeys$1(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymb
 function _objectSpread$1(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys$1(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$1(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 function _callSuper$1(t, o, e) { return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct$1() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e)); }
 function _isNativeReflectConstruct$1() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct$1 = function _isNativeReflectConstruct() { return !!t; })(); }
-function _superPropGet(t, e, o, r) { var p = _get(_getPrototypeOf(1 & r ? t.prototype : t), e, o); return 2 & r && "function" == typeof p ? function (t) { return p.apply(o, t); } : p; }
+function _superPropGet(t, o, e, r) { var p = _get(_getPrototypeOf(1 & r ? t.prototype : t), o, e); return 2 & r && "function" == typeof p ? function (t) { return p.apply(e, t); } : p; }
 
 /**
  * Transition applier props
@@ -446,6 +446,10 @@ var setup = function setup(props) {
           top = _spacing$top$bottom$x.top,
           bottom = _spacing$top$bottom$x.bottom,
           x = _spacing$top$bottom$x.x;
+        console.log("Calculated port data:", {
+          x: data.side === 'output' ? x : -x,
+          y: data.side === 'output' ? top + data.index * spacing : data.height - bottom - data.ports * spacing + data.index * spacing
+        });
         if (data.side === 'output') {
           return {
             x: x,
